@@ -1,0 +1,37 @@
+curl -XPOST \
+-d 'PLACE 0,0,NORTH
+LEFT
+RIGHT
+MOVE
+REPORT' \
+http://localhost/
+
+
+curl -XPOST \
+-d 'PLACE 0,0,NORTH
+MOVE
+REPORT' \
+http://localhost/
+
+
+curl -XPOST \
+-d 'PLACE 0,0,NORTH
+LEFT
+REPORT' \
+http://localhost/
+
+
+
+curl -XPOST \
+-d 'PLACE 1,2,EAST
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT' \
+http://localhost/
+
+
+curl -XPOST \
+-d 'MOVE' \
+http://localhost/

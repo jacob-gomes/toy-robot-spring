@@ -1,0 +1,197 @@
+{
+	"variables": [],
+	"info": {
+		"name": "toy-robot-spring-test-cases",
+		"_postman_id": "bb7e0216-71eb-1e0c-75ca-d8f34462b51f",
+		"description": "Idealo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestCase1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body is correct\"] = responseBody === \"0,1,NORTH\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "PLACE 0,0,NORTH\r\nMOVE\r\nREPORT"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body is correct\"] = responseBody === \"0,0,WEST\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "PLACE 0,0,NORTH\r\nLEFT\r\nREPORT"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body is correct\"] = responseBody === \"3,3,NORTH\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "PLACE 1,2,EAST\r\nMOVE\r\nMOVE\r\nLEFT\r\nMOVE\r\nREPORT"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body is correct\"] = responseBody === \"ROBOT MISSING\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "MOVE"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body is correct\"] = responseBody === \"4,4,NORTH\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "PLACE 1,2,EAST\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nLEFT\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nMOVE\r\nREPORT\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TestCase6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body is correct\"] = responseBody === \"Please place the Robot on the table\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "PLACE 6,7,EAST\r\nREPORT\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
